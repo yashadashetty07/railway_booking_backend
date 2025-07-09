@@ -1,0 +1,157 @@
+[
+  {
+    "userID": "U1001",
+    "name": "Yash Adashetty",
+    "hashedPassword": "e99a18c428cb38d5f260853678922e03",
+    "ticketsBooked": [
+      {
+        "ticketID": "TKT001",
+        "userID": "U1001",
+        "source": "Mumbai",
+        "destination": "Pune",
+        "dateOfTravel": "2025-07-15",
+        "train": {
+          "trainID": "TR001",
+          "trainNo": "11001",
+          "seats": [[1, 0, 1], [1, 1, 0]],
+          "stationTimes": {
+            "Mumbai": "08:00",
+            "Lonavala": "09:30",
+            "Pune": "11:00"
+          },
+          "stations": ["Mumbai", "Lonavala", "Pune"]
+        }
+      }
+    ]
+  },
+  {
+    "userID": "U1002",
+    "name": "Sneha Mehta",
+    "hashedPassword": "5f4dcc3b5aa765d61d8327deb882cf99",
+    "ticketsBooked": []
+  },
+  {
+    "userID": "U1003",
+    "name": "Rahul Verma",
+    "hashedPassword": "098f6bcd4621d373cade4e832627b4f6",
+    "ticketsBooked": [
+      {
+        "ticketID": "TKT002",
+        "userID": "U1003",
+        "source": "Delhi",
+        "destination": "Agra",
+        "dateOfTravel": "2025-07-20",
+        "train": {
+          "trainID": "TR002",
+          "trainNo": "12002",
+          "seats": [[0, 1], [1, 1]],
+          "stationTimes": {
+            "Delhi": "07:00",
+            "Mathura": "08:30",
+            "Agra": "09:15"
+          },
+          "stations": ["Delhi", "Mathura", "Agra"]
+        }
+      }
+    ]
+  },
+  {
+    "userID": "U1004",
+    "name": "Priya Shah",
+    "hashedPassword": "7c6a180b36896a0a8c02787eeafb0e4c",
+    "ticketsBooked": []
+  },
+  {
+    "userID": "U1005",
+    "name": "Aman Gupta",
+    "hashedPassword": "6cb75f652a9b52798eb6cf2201057c73",
+    "ticketsBooked": [
+      {
+        "ticketID": "TKT003",
+        "userID": "U1005",
+        "source": "Chennai",
+        "destination": "Bangalore",
+        "dateOfTravel": "2025-07-18",
+        "train": {
+          "trainID": "TR003",
+          "trainNo": "12678",
+          "seats": [[1, 1, 1], [0, 1, 0]],
+          "stationTimes": {
+            "Chennai": "06:00",
+            "Vellore": "08:00",
+            "Bangalore": "10:30"
+          },
+          "stations": ["Chennai", "Vellore", "Bangalore"]
+        }
+      }
+    ]
+  },
+  {
+    "userID": "U1006",
+    "name": "Isha Rane",
+    "hashedPassword": "03c7c0ace395d80182db07ae2c30f034",
+    "ticketsBooked": []
+  },
+  {
+    "userID": "U1007",
+    "name": "Nikhil Bansal",
+    "hashedPassword": "827ccb0eea8a706c4c34a16891f84e7b",
+    "ticketsBooked": [
+      {
+        "ticketID": "TKT004",
+        "userID": "U1007",
+        "source": "Jaipur",
+        "destination": "Udaipur",
+        "dateOfTravel": "2025-07-22",
+        "train": {
+          "trainID": "TR004",
+          "trainNo": "12992",
+          "seats": [[1, 0], [1, 1]],
+          "stationTimes": {
+            "Jaipur": "05:30",
+            "Ajmer": "07:15",
+            "Udaipur": "09:45"
+          },
+          "stations": ["Jaipur", "Ajmer", "Udaipur"]
+        }
+      }
+    ]
+  },
+  {
+    "userID": "U1008",
+    "name": "Ananya Desai",
+    "hashedPassword": "202cb962ac59075b964b07152d234b70",
+    "ticketsBooked": []
+  },
+  {
+    "userID": "U1009",
+    "name": "Ravi Kumar",
+    "hashedPassword": "25d55ad283aa400af464c76d713c07ad",
+    "ticketsBooked": [
+      {
+        "ticketID": "TKT005",
+        "userID": "U1009",
+        "source": "Kolkata",
+        "destination": "Durgapur",
+        "dateOfTravel": "2025-07-25",
+        "train": {
+          "trainID": "TR005",
+          "trainNo": "13023",
+          "seats": [[1, 1], [1, 0]],
+          "stationTimes": {
+            "Kolkata": "06:45",
+            "Bardhaman": "08:00",
+            "Durgapur": "09:30"
+          },
+          "stations": ["Kolkata", "Bardhaman", "Durgapur"]
+        }
+      }
+    ]
+  },
+  {
+    "userID": "U1010",
+    "name": "Kavita Joshi",
+    "hashedPassword": "5d41402abc4b2a76b9719d911017c592",
+    "ticketsBooked": []
+  }
+]
