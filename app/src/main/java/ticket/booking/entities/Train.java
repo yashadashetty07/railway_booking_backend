@@ -1,6 +1,5 @@
 package ticket.booking.entities;
 
-import java.sql.Time;
 import java.util.List;
 import java.util.Map;
 
@@ -32,11 +31,11 @@ public class Train {
         this.trainID = trainID;
     }
 
-    public Map<String, Time> getStationTimes() {
+    public Map<String, String> getStationTimes() {
         return stationTimes;
     }
 
-    public void setStationTimes(Map<String, Time> stationTimes) {
+    public void setStationTimes(Map<String, String> stationTimes) {
         this.stationTimes = stationTimes;
     }
 
@@ -49,7 +48,6 @@ public class Train {
     }
 
     private List<List<Integer>> seats;
-    private Map<String,Time> stationTimes;
+    private Map<String, String> stationTimes;
     private List<String> stations;
-
 }
