@@ -2,110 +2,140 @@
   {
     "trainID": "TR001",
     "trainNo": "11001",
-    "seats": [[1, 0, 1], [1, 1, 0]],
+    "seats": [
+      [1, 1, 0, 1], [1, 0, 0, 1], [1, 1, 1, 1], [0, 1, 1, 0], [1, 0, 1, 0],
+      [1, 1, 1, 0], [0, 1, 1, 1], [1, 1, 0, 1], [1, 0, 1, 1], [0, 1, 1, 0]
+    ],
     "stationTimes": {
       "mumbai": "08:00",
-      "lonavala": "09:30",
+      "thane": "08:30",
       "pune": "11:00"
     },
-    "stations": ["mumbai", "lonavala", "pune"]
+    "stations": ["mumbai", "thane", "pune"]
   },
   {
     "trainID": "TR002",
     "trainNo": "12002",
-    "seats": [[0, 1], [1, 1]],
+    "seats": [
+      [1, 1, 0, 0], [0, 1, 1, 1], [1, 1, 0, 1], [1, 0, 0, 1], [0, 1, 1, 0],
+      [1, 1, 1, 1], [0, 0, 1, 1], [1, 1, 0, 0], [1, 0, 1, 1], [1, 1, 1, 0]
+    ],
     "stationTimes": {
-      "delhi": "07:00",
-      "mathura": "08:30",
-      "agra": "09:15"
+      "delhi": "06:00",
+      "mathura": "08:00",
+      "agra": "10:00"
     },
     "stations": ["delhi", "mathura", "agra"]
   },
   {
     "trainID": "TR003",
     "trainNo": "12678",
-    "seats": [[1, 1, 1], [0, 1, 0]],
+    "seats": [
+      [1, 0, 1, 1], [1, 1, 0, 0], [0, 1, 1, 1], [1, 1, 1, 0], [0, 0, 1, 1],
+      [1, 0, 0, 1], [1, 1, 0, 1], [1, 0, 1, 1], [0, 1, 1, 0], [1, 1, 1, 1]
+    ],
     "stationTimes": {
       "chennai": "06:00",
       "vellore": "08:00",
-      "bangalore": "10:30"
+      "bangalore": "11:00"
     },
     "stations": ["chennai", "vellore", "bangalore"]
   },
   {
     "trainID": "TR004",
     "trainNo": "12992",
-    "seats": [[1, 0], [1, 1]],
+    "seats": [
+      [1, 1, 1, 0], [0, 1, 0, 1], [1, 0, 1, 1], [0, 1, 1, 0], [1, 1, 0, 1],
+      [1, 1, 1, 1], [0, 1, 0, 0], [1, 1, 0, 1], [0, 1, 1, 1], [1, 0, 1, 1]
+    ],
     "stationTimes": {
-      "jaipur": "05:30",
-      "ajmer": "07:15",
-      "udaipur": "09:45"
+      "jaipur": "07:00",
+      "ajmer": "09:00",
+      "udaipur": "12:00"
     },
     "stations": ["jaipur", "ajmer", "udaipur"]
   },
   {
     "trainID": "TR005",
     "trainNo": "13023",
-    "seats": [[1, 1], [1, 0]],
+    "seats": [
+      [1, 1, 0, 0], [1, 1, 1, 0], [1, 0, 0, 1], [1, 1, 1, 1], [0, 1, 1, 0],
+      [1, 0, 1, 1], [1, 1, 0, 0], [0, 1, 0, 1], [1, 1, 1, 0], [1, 0, 1, 1]
+    ],
     "stationTimes": {
-      "kolkata": "06:45",
-      "bardhaman": "08:00",
-      "durgapur": "09:30"
+      "kolkata": "05:30",
+      "bardhaman": "07:00",
+      "durgapur": "09:00"
     },
     "stations": ["kolkata", "bardhaman", "durgapur"]
   },
   {
     "trainID": "TR006",
     "trainNo": "17015",
-    "seats": [[1, 1, 0], [0, 1, 1]],
+    "seats": [
+      [1, 1, 1, 1], [0, 0, 1, 1], [1, 1, 0, 0], [0, 1, 1, 1], [1, 0, 1, 0],
+      [1, 1, 0, 1], [0, 0, 1, 1], [1, 1, 1, 0], [0, 1, 1, 1], [1, 0, 0, 1]
+    ],
     "stationTimes": {
       "hyderabad": "06:00",
-      "kazipet": "08:15",
-      "warangal": "09:00"
+      "nalgonda": "08:00",
+      "guntur": "10:30"
     },
-    "stations": ["hyderabad", "kazipet", "warangal"]
+    "stations": ["hyderabad", "nalgonda", "guntur"]
   },
   {
     "trainID": "TR007",
     "trainNo": "14163",
-    "seats": [[0, 1], [1, 0]],
+    "seats": [
+      [1, 1, 1, 0], [1, 0, 1, 1], [0, 1, 1, 1], [1, 1, 0, 1], [1, 1, 1, 0],
+      [0, 1, 0, 1], [1, 0, 1, 0], [1, 1, 1, 1], [0, 1, 0, 1], [1, 0, 1, 1]
+    ],
     "stationTimes": {
       "kanpur": "04:00",
-      "allahabad": "06:00",
-      "varanasi": "08:00"
+      "lucknow": "06:30",
+      "varanasi": "09:00"
     },
-    "stations": ["kanpur", "allahabad", "varanasi"]
+    "stations": ["kanpur", "lucknow", "varanasi"]
   },
   {
     "trainID": "TR008",
     "trainNo": "12615",
-    "seats": [[1, 1, 1], [1, 0, 1]],
+    "seats": [
+      [1, 0, 1, 1], [1, 1, 0, 1], [0, 1, 0, 0], [1, 1, 1, 1], [1, 0, 1, 1],
+      [0, 1, 1, 0], [1, 0, 1, 0], [1, 1, 0, 1], [1, 0, 1, 1], [1, 1, 0, 0]
+    ],
     "stationTimes": {
-      "bangalore": "09:00",
-      "salem": "12:00",
-      "chennai": "15:00"
+      "bangalore": "05:00",
+      "salem": "07:30",
+      "chennai": "10:00"
     },
     "stations": ["bangalore", "salem", "chennai"]
   },
   {
     "trainID": "TR009",
     "trainNo": "12101",
-    "seats": [[0, 0, 1], [1, 1, 1]],
+    "seats": [
+      [1, 0, 1, 0], [1, 1, 0, 1], [1, 1, 1, 0], [1, 0, 0, 1], [0, 1, 1, 1],
+      [1, 0, 1, 1], [1, 1, 0, 0], [0, 1, 1, 1], [1, 1, 1, 0], [0, 0, 1, 1]
+    ],
     "stationTimes": {
-      "mumbai": "06:30",
-      "nasik": "09:30",
-      "nagpur": "15:30"
+      "mumbai": "07:00",
+      "nasik": "10:00",
+      "nagpur": "16:00"
     },
     "stations": ["mumbai", "nasik", "nagpur"]
   },
   {
     "trainID": "TR010",
     "trainNo": "12552",
-    "seats": [[1, 0], [1, 0]],
+    "seats": [
+      [1, 1, 0, 1], [1, 0, 0, 1], [1, 1, 1, 1], [0, 1, 1, 0], [1, 0, 1, 0],
+      [1, 1, 1, 0], [0, 1, 1, 1], [1, 1, 0, 1], [1, 0, 1, 1], [0, 1, 1, 0]
+    ],
     "stationTimes": {
-      "lucknow": "05:00",
-      "gorakhpur": "08:30",
-      "darbhanga": "12:45"
+      "lucknow": "06:00",
+      "gorakhpur": "09:00",
+      "darbhanga": "13:00"
     },
     "stations": ["lucknow", "gorakhpur", "darbhanga"]
   }

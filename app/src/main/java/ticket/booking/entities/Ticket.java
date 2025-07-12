@@ -4,7 +4,15 @@ import java.util.Date;
 
 public class Ticket {
     private String ticketID;
-
+    @Override
+    public String toString() {
+        return "TicketID: " + ticketID +
+                ", UserID: " + userID +
+                ", Source: " + source +
+                ", Destination: " + destination +
+                ", DateOfTravel: " + new java.text.SimpleDateFormat("yyyy-MM-dd").format(dateOfTravel) +
+                ", TrainNo: " + (train != null ? train.getTrainNo() : "N/A");
+    }
     public String getTicketID() {
         return ticketID;
     }

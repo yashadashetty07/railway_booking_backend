@@ -13,55 +13,74 @@ public class TrainService {
 
     private static final String TRAINS_PATH = "app/src/main/java/ticket/booking/localDB/trains.json";
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private Train train;
 
     public List<Train> loadTrainsfromDB() throws IOException {
-        File trainList = new File(TRAINS_PATH);
-        return objectMapper.readValue(trainList, new TypeReference<List<Train>>() {
-        });
+        File trainsFile = new File(TRAINS_PATH);
+        // First load raw trains with seats as List<List<Integer>>
+        List<Train> trains = objectMapper.readValue(trainsFile, new TypeReference<List<Train>>() {});
+
+        // Convert seats from List<List<Integer>> to boolean[][]
+        for (Train train : trains) {
+            List<List<Integer>> seatsList = train.getSeatsAsList();
+            if (seatsList != null && !seatsList.isEmpty()) {
+                boolean[][] seatsArray = new boolean[seatsList.size()][];
+                for (int i = 0; i < seatsList.size(); i++) {
+                    List<Integer> row = seatsList.get(i);
+                    seatsArray[i] = new boolean[row.size()];
+                    for (int j = 0; j < row.size(); j++) {
+                        // 1 means available (true), 0 means booked (false)
+                        seatsArray[i][j] = (row.get(j) == 1);
+                    }
+                }
+                train.setSeats(seatsArray);
+            }
+        }
+        return trains;
     }
 
     public List<Train> searchTrains(String source, String destination) throws IOException {
-        return loadTrainsfromDB().stream().filter(train -> validTrain(train, source, destination)).collect(Collectors.toList());
-    }
-
-    public boolean validTrain(Train train, String source, String destination) {
-        List<String> stationOrder = train.getStations().stream()
-                .map(String::toLowerCase)
+        List<Train> trains = loadTrainsfromDB();
+        List<Train> routeTrains = trains.stream()
+                .filter(train -> train.getStations().contains(source) && train.getStations().contains(destination))
                 .collect(Collectors.toList());
-        int sourceIndex = stationOrder.indexOf(source.trim().toLowerCase());
-        int destinationIndex = stationOrder.indexOf(destination.trim().toLowerCase());
 
-        return (sourceIndex != -1 && destinationIndex != -1 && sourceIndex < destinationIndex);
+        if (routeTrains.isEmpty()) {
+            System.out.println("No trains available for the route from " + source + " to " + destination + ".");
+        } else {
+            System.out.println(routeTrains.size() + " train(s) found for the route.");
+        }
+        return routeTrains;
     }
 
     public void availableSeats(Train train) {
-        System.out.println("Available seat matrix (0 = available, 1 = booked):");
-        for (int i = 0; i < train.getSeats().size(); i++) {
-            System.out.print("Row " + (i + 1) + ": ");
-            for (int j = 0; j < train.getSeats().get(i).size(); j++) {
-                System.out.print(train.getSeats().get(i).get(j) + " ");
+        System.out.println("Seats availability for train: " + train.getTrainNo());
+        boolean seatsAvailable = false;
+        boolean[][] seats = train.getSeats();
+        for (int i = 0; i < seats.length; i++) {
+            for (int j = 0; j < seats[i].length; j++) {
+                String seatStatus = seats[i][j] ? "Available" : "Booked";
+                System.out.printf("Row %d, Seat %d: %s%n", i + 1, j + 1, seatStatus);
+                if (seats[i][j]) seatsAvailable = true;
             }
-            System.out.println();
+        }
+        if (!seatsAvailable) {
+            System.out.println("No seats available on this train.");
         }
     }
 
-
-    public void bookSeat(Train train, int row, int col) {
-        if (row < 0 || row >= train.getSeats().size() || col < 0 || col >= train.getSeats().get(0).size()) {
-            System.out.println("Invalid seat selection. Row should be 1–10 and seat 1–4.");
-            return;
+    public boolean bookSeat(Train train, int row, int col) {
+        // true means seat available, false means booked
+        if (!train.getSeats()[row][col]) { // if seat is false (booked)
+            System.out.println("Seat already booked.");
+            return false;
         }
+        // Mark seat as booked (false)
+        train.getSeats()[row][col] = false;
 
-        if (train.getSeats().get(row).get(col) == 0) {
-            train.getSeats().get(row).set(col, 1);
-            System.out.println("Seat booked successfully at Row " + (row + 1) + ", Seat " + (col + 1));
-        } else {
-            System.out.println("Seat is already booked. Try another one.");
-        }
-    }
-    public void saveTrainsToDB(List<Train> trains) throws IOException {
-        objectMapper.writeValue(new File(TRAINS_PATH), trains);
+        // TODO: Save train data to file here if persistence needed
+
+        System.out.println("Seat booked successfully.");
+        return true;
     }
 
 

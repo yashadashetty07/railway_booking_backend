@@ -7,12 +7,21 @@ public class Train {
     private String trainID;
     private String trainNo;
 
-    public List<List<Integer>> getSeats() {
-        return seats;
+    // This is the raw seats data loaded from JSON as List<List<Integer>>
+    private List<List<Integer>> seatsAsList;
+
+    // This is the actual seats array used internally (not serialized directly)
+    private boolean[][] seats;
+
+    private Map<String, String> stationTimes;
+    private List<String> stations;
+
+    public String getTrainID() {
+        return trainID;
     }
 
-    public void setSeats(List<List<Integer>> seats) {
-        this.seats = seats;
+    public void setTrainID(String trainID) {
+        this.trainID = trainID;
     }
 
     public String getTrainNo() {
@@ -23,12 +32,20 @@ public class Train {
         this.trainNo = trainNo;
     }
 
-    public String getTrainID() {
-        return trainID;
+    public List<List<Integer>> getSeatsAsList() {
+        return seatsAsList;
     }
 
-    public void setTrainID(String trainID) {
-        this.trainID = trainID;
+    public void setSeatsAsList(List<List<Integer>> seatsAsList) {
+        this.seatsAsList = seatsAsList;
+    }
+
+    public boolean[][] getSeats() {
+        return seats;
+    }
+
+    public void setSeats(boolean[][] seats) {
+        this.seats = seats;
     }
 
     public Map<String, String> getStationTimes() {
@@ -46,8 +63,4 @@ public class Train {
     public void setStations(List<String> stations) {
         this.stations = stations;
     }
-
-    private List<List<Integer>> seats;
-    private Map<String, String> stationTimes;
-    private List<String> stations;
 }

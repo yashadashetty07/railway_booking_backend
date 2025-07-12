@@ -12,64 +12,116 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserBookingService {
-    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDB/users.json";
-    private final ObjectMapper objectMapper = new ObjectMapper();
     private User user;
     private List<User> userList;
-
-    public UserBookingService(User user1) throws IOException {
-        this.user = user1;
-        userList = loadUsersfromDB();
-    }
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localDB/users.json";
 
     public UserBookingService() throws IOException {
-        userList = loadUsersfromDB();
-    }
-
-    public List<User> loadUsersfromDB() throws IOException {
-        File users = new File(USERS_PATH);
-        return objectMapper.readValue(users, new TypeReference<List<User>>() {
+        File usersFile = new File(USERS_PATH);
+        userList = objectMapper.readValue(usersFile, new TypeReference<List<User>>() {
         });
     }
 
-    public Optional<User> loginUser(User inputUser) {
-        return userList.stream()
-                .filter(storedUser -> storedUser.getName().equalsIgnoreCase(inputUser.getName())
-                        && UserServiceUtil.checkPassword(inputUser.getPassword(), storedUser.getHashedPassword()))
-                .findFirst();
+    public UserBookingService(User user) throws IOException {
+        this.user = user;
+        File usersFile = new File(USERS_PATH);
+        userList = objectMapper.readValue(usersFile, new TypeReference<List<User>>() {
+        });
     }
 
+    public boolean signUpUser(User newUser) {
+        Optional<User> existingUser = userList.stream()
+                .filter(u -> u.getName().equals(newUser.getName()))
+                .findAny();
 
+        if (existingUser.isPresent()) {
+            System.out.println("SignUp Error: Username '" + newUser.getName() + "' already exists.");
+            return false;
+        }
 
-    public Boolean signUpUser(User user1) {
+        userList.add(newUser);
         try {
-            userList.add(user1);
-            SaveUserListToFile();
-            return Boolean.TRUE;
+            saveUserListToFile();
+            System.out.println("User '" + newUser.getName() + "' registered successfully.");
+            return true;
         } catch (IOException e) {
-            return Boolean.FALSE;
+            System.out.println("SignUp Error: Unable to save user data - " + e.getMessage());
+            return false;
         }
     }
 
-    private void SaveUserListToFile() throws IOException {
+    public Optional<User> loginUser(User inputUser) {
+        Optional<User> foundUser = userList.stream()
+                .filter(user1 -> user1.getName().equals(inputUser.getName()) &&
+                        UserServiceUtil.checkPassword(inputUser.getPassword(), user1.getHashedPassword()))
+                .findAny();
+
+        if (foundUser.isPresent()) {
+            System.out.println("Login successful for user: " + inputUser.getName());
+        } else {
+            System.out.println("Login failed: Invalid username or password.");
+        }
+        return foundUser;
+    }
+
+    public void fetchBooking() {
+        if (user == null) {
+            System.out.println("No user logged in. Please login first.");
+            return;
+        }
+        if (user.getTicketsBooked() == null || user.getTicketsBooked().isEmpty()) {
+            System.out.println("No bookings found for user: " + user.getName());
+            return;
+        }
+        user.getTicketsBooked().forEach(ticket -> System.out.println(ticket.toString()));
+    }
+
+    public void cancelBooking(Ticket ticket, User user) {
+        if (user == null) {
+            System.out.println("No user logged in. Cancellation failed.");
+            return;
+        }
+        boolean removed = user.getTicketsBooked().removeIf(t -> t.getTicketID().equals(ticket.getTicketID()));
+
+        if (removed) {
+            try {
+                saveUserListToFile();
+                System.out.println("Booking with TicketID " + ticket.getTicketID() + " cancelled successfully.");
+            } catch (IOException e) {
+                System.out.println("Error updating bookings after cancellation: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Cancellation failed: Booking not found.");
+        }
+    }
+
+    public void bookTicket(Ticket ticket) {
+        if (user == null) {
+            System.out.println("No user logged in. Booking failed.");
+            return;
+        }
+
+        user.getTicketsBooked().add(ticket);
+
+        try {
+            saveUserListToFile();
+            System.out.println("Ticket booked successfully with TicketID: " + ticket.getTicketID());
+        } catch (IOException e) {
+            System.out.println("Booking failed: Unable to update user data - " + e.getMessage());
+        }
+    }
+
+    private void saveUserListToFile() throws IOException {
         File usersFile = new File(USERS_PATH);
         objectMapper.writeValue(usersFile, userList);
     }
 
-    public void fetchBooking() {
-        user.printTickets();
-    }
-
-    public void cancelBooking(Ticket ticket1, User user1) {
-        user1.getTicketsBooked().removeIf(ticket -> ticket.getTicketID().equals(ticket1.getTicketID()));
-        try {
-            SaveUserListToFile();
-        } catch (IOException e) {
-            System.out.println("Failed to update file after cancelling ticket: " + e.getMessage());
-        }
+    public User getUser() {
+        return user;
     }
 
     public void setUser(User user) {
-        this.user= user;
+        this.user = user;
     }
 }

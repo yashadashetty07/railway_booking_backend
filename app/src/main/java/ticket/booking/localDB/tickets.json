@@ -2,181 +2,171 @@
   {
     "ticketID": "TKT001",
     "userID": "U1001",
-    "source": "Mumbai",
-    "destination": "Pune",
-    "dateOfTravel": "2025-07-15",
+    "source": "mumbai",
+    "destination": "pune",
+    "dateOfTravel": 1752537600000,
     "train": {
       "trainID": "TR001",
       "trainNo": "11001",
-      "seats": [[1, 0, 1], [1, 1, 0]],
       "stationTimes": {
-        "Mumbai": "08:00",
-        "Lonavala": "09:30",
-        "Pune": "11:00"
+        "mumbai": "08:00",
+        "thane": "08:30",
+        "pune": "11:00"
       },
-      "stations": ["Mumbai", "Lonavala", "Pune"]
+      "stations": ["mumbai", "thane", "pune"]
     }
   },
   {
     "ticketID": "TKT002",
-    "userID": "U1003",
-    "source": "Delhi",
-    "destination": "Agra",
-    "dateOfTravel": "2025-07-20",
+    "userID": "U1002",
+    "source": "delhi",
+    "destination": "agra",
+    "dateOfTravel": 1752624000000,
     "train": {
       "trainID": "TR002",
       "trainNo": "12002",
-      "seats": [[0, 1], [1, 1]],
       "stationTimes": {
-        "Delhi": "07:00",
-        "Mathura": "08:30",
-        "Agra": "09:15"
+        "delhi": "06:00",
+        "mathura": "08:00",
+        "agra": "10:00"
       },
-      "stations": ["Delhi", "Mathura", "Agra"]
+      "stations": ["delhi", "mathura", "agra"]
     }
   },
   {
     "ticketID": "TKT003",
-    "userID": "U1005",
-    "source": "Chennai",
-    "destination": "Bangalore",
-    "dateOfTravel": "2025-07-18",
+    "userID": "U1003",
+    "source": "chennai",
+    "destination": "bangalore",
+    "dateOfTravel": 1752710400000,
     "train": {
       "trainID": "TR003",
       "trainNo": "12678",
-      "seats": [[1, 1, 1], [0, 1, 0]],
       "stationTimes": {
-        "Chennai": "06:00",
-        "Vellore": "08:00",
-        "Bangalore": "10:30"
+        "chennai": "06:00",
+        "vellore": "08:00",
+        "bangalore": "11:00"
       },
-      "stations": ["Chennai", "Vellore", "Bangalore"]
+      "stations": ["chennai", "vellore", "bangalore"]
     }
   },
   {
     "ticketID": "TKT004",
-    "userID": "U1007",
-    "source": "Jaipur",
-    "destination": "Udaipur",
-    "dateOfTravel": "2025-07-22",
+    "userID": "U1004",
+    "source": "jaipur",
+    "destination": "udaipur",
+    "dateOfTravel": 1752796800000,
     "train": {
       "trainID": "TR004",
       "trainNo": "12992",
-      "seats": [[1, 0], [1, 1]],
       "stationTimes": {
-        "Jaipur": "05:30",
-        "Ajmer": "07:15",
-        "Udaipur": "09:45"
+        "jaipur": "07:00",
+        "ajmer": "09:00",
+        "udaipur": "12:00"
       },
-      "stations": ["Jaipur", "Ajmer", "Udaipur"]
+      "stations": ["jaipur", "ajmer", "udaipur"]
     }
   },
   {
     "ticketID": "TKT005",
-    "userID": "U1009",
-    "source": "Kolkata",
-    "destination": "Durgapur",
-    "dateOfTravel": "2025-07-25",
+    "userID": "U1005",
+    "source": "kolkata",
+    "destination": "durgapur",
+    "dateOfTravel": 1752883200000,
     "train": {
       "trainID": "TR005",
       "trainNo": "13023",
-      "seats": [[1, 1], [1, 0]],
       "stationTimes": {
-        "Kolkata": "06:45",
-        "Bardhaman": "08:00",
-        "Durgapur": "09:30"
+        "kolkata": "05:30",
+        "bardhaman": "07:00",
+        "durgapur": "09:00"
       },
-      "stations": ["Kolkata", "Bardhaman", "Durgapur"]
+      "stations": ["kolkata", "bardhaman", "durgapur"]
     }
   },
   {
     "ticketID": "TKT006",
-    "userID": "U1001",
-    "source": "Mumbai",
-    "destination": "Pune",
-    "dateOfTravel": "2025-08-01",
+    "userID": "U1006",
+    "source": "hyderabad",
+    "destination": "guntur",
+    "dateOfTravel": 1752969600000,
     "train": {
-      "trainID": "TR001",
-      "trainNo": "11001",
-      "seats": [[1, 0, 1], [1, 1, 0]],
+      "trainID": "TR006",
+      "trainNo": "17015",
       "stationTimes": {
-        "Mumbai": "08:00",
-        "Lonavala": "09:30",
-        "Pune": "11:00"
+        "hyderabad": "06:00",
+        "nalgonda": "08:00",
+        "guntur": "10:30"
       },
-      "stations": ["Mumbai", "Lonavala", "Pune"]
+      "stations": ["hyderabad", "nalgonda", "guntur"]
     }
   },
   {
     "ticketID": "TKT007",
-    "userID": "U1005",
-    "source": "Chennai",
-    "destination": "Bangalore",
-    "dateOfTravel": "2025-08-05",
+    "userID": "U1007",
+    "source": "kanpur",
+    "destination": "varanasi",
+    "dateOfTravel": 1753056000000,
     "train": {
-      "trainID": "TR003",
-      "trainNo": "12678",
-      "seats": [[1, 1, 1], [0, 1, 0]],
+      "trainID": "TR007",
+      "trainNo": "14163",
       "stationTimes": {
-        "Chennai": "06:00",
-        "Vellore": "08:00",
-        "Bangalore": "10:30"
+        "kanpur": "04:00",
+        "lucknow": "06:30",
+        "varanasi": "09:00"
       },
-      "stations": ["Chennai", "Vellore", "Bangalore"]
+      "stations": ["kanpur", "lucknow", "varanasi"]
     }
   },
   {
     "ticketID": "TKT008",
-    "userID": "U1003",
-    "source": "Delhi",
-    "destination": "Agra",
-    "dateOfTravel": "2025-08-10",
+    "userID": "U1008",
+    "source": "bangalore",
+    "destination": "chennai",
+    "dateOfTravel": 1753142400000,
     "train": {
-      "trainID": "TR002",
-      "trainNo": "12002",
-      "seats": [[0, 1], [1, 1]],
+      "trainID": "TR008",
+      "trainNo": "12615",
       "stationTimes": {
-        "Delhi": "07:00",
-        "Mathura": "08:30",
-        "Agra": "09:15"
+        "bangalore": "05:00",
+        "salem": "07:30",
+        "chennai": "10:00"
       },
-      "stations": ["Delhi", "Mathura", "Agra"]
+      "stations": ["bangalore", "salem", "chennai"]
     }
   },
   {
     "ticketID": "TKT009",
-    "userID": "U1007",
-    "source": "Jaipur",
-    "destination": "Udaipur",
-    "dateOfTravel": "2025-08-12",
+    "userID": "U1009",
+    "source": "mumbai",
+    "destination": "nagpur",
+    "dateOfTravel": 1753228800000,
     "train": {
-      "trainID": "TR004",
-      "trainNo": "12992",
-      "seats": [[1, 0], [1, 1]],
+      "trainID": "TR009",
+      "trainNo": "12101",
       "stationTimes": {
-        "Jaipur": "05:30",
-        "Ajmer": "07:15",
-        "Udaipur": "09:45"
+        "mumbai": "07:00",
+        "nasik": "10:00",
+        "nagpur": "16:00"
       },
-      "stations": ["Jaipur", "Ajmer", "Udaipur"]
+      "stations": ["mumbai", "nasik", "nagpur"]
     }
   },
   {
     "ticketID": "TKT010",
-    "userID": "U1009",
-    "source": "Kolkata",
-    "destination": "Durgapur",
-    "dateOfTravel": "2025-08-15",
+    "userID": "U1010",
+    "source": "lucknow",
+    "destination": "darbhanga",
+    "dateOfTravel": 1753315200000,
     "train": {
-      "trainID": "TR005",
-      "trainNo": "13023",
-      "seats": [[1, 1], [1, 0]],
+      "trainID": "TR010",
+      "trainNo": "12552",
       "stationTimes": {
-        "Kolkata": "06:45",
-        "Bardhaman": "08:00",
-        "Durgapur": "09:30"
+        "lucknow": "06:00",
+        "gorakhpur": "09:00",
+        "darbhanga": "13:00"
       },
-      "stations": ["Kolkata", "Bardhaman", "Durgapur"]
+      "stations": ["lucknow", "gorakhpur", "darbhanga"]
     }
   }
 ]
